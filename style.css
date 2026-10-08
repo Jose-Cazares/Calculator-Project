@@ -5,8 +5,9 @@
 
 h1{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     color: white;
+
 }
 body{
     background-color: rgb(42, 42, 85);
@@ -15,11 +16,12 @@ body{
 .calculator{
     display: flex;
     justify-content: center;
-    border: 2px solid green; /*Este borde solo es para guiarme */
-    padding-top: 10px;
-    height: 80vh;
-    align-content: flex-end;
+    padding-top: 20px;
+    height: 70vh;
+    align-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
 
 }
 
@@ -27,7 +29,6 @@ body{
     height: 53vh;
     width: 23vw;
     display: grid;
-    /* border: 2px solid red; Este borde solo es para guiarme */
     background-color: rgba(26, 31, 68, 0.92);
     grid-template-rows: repeat(5, 65px);
     grid-template-columns: repeat(4, 65px);
@@ -39,23 +40,23 @@ body{
 
 .btn-calc{
     display:flex;
-    /* border: 2px solid black; Este borde solo es para guiarme */
     align-items: center;
     justify-content: center;
     background-color: white;
     color: rgb(34, 28, 81);
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
+    border: 2px solid rgba(49, 56, 110, 0.92);
+    border-radius: 3px;
 }
 
 .btn-calc.DEL{
     display:flex;
-    border: 2px solid black; /*Este borde solo es para guiarme */
     align-items: center;
     justify-content: center;
     background-color: rgb(62, 62, 149);
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -64,7 +65,7 @@ body{
 }
 
 .reset{
-    font-size: 15px;
+    font-size: 18px;
     background-color: rgb(62, 62, 149);
     color: white;
 }
@@ -72,9 +73,27 @@ body{
 .equal{
     color: white;
     background-color: rgb(190, 27, 27);
+    border: 2px solid rgba(206, 67, 67, 0.85);
 }
 
 footer{
+    padding-top: 10px;
     color: white;
     text-align: center;
+}
+
+.calc-display{
+    display: flex;
+    height: 100px;
+    background-color: rgba(26, 31, 68, 0.92);
+    border-radius: 5px;
+    color: white;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.res{
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
 }
