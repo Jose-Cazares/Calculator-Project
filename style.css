@@ -16,22 +16,59 @@ h1{
 }
 
 .calc-base{
-    height: 60vh;
-    width: 35vw;
+    height: 50vh;
+    width: 22vw;
     display: grid;
-    border: 2px solid red; /*Este borde solo es para guiarme */
-    background-color: rgb(21, 31, 109);
+    /* border: 2px solid red; Este borde solo es para guiarme */
+    background-color: rgb(48, 55, 104);
     grid-template-rows: 50px 50px 50px 50px;
-    grid-template-columns: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
 }
 
 .btn-calc{
-    width: 50px;
+    width: 45px;
     height: 40px;
     display:flex;
     border: 2px solid black; /*Este borde solo es para guiarme */
     align-items: center;
     justify-content: center;
     background-color: white;
-    color: black;
+    color: rgb(34, 28, 81);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.btn-calc.DEL{
+    width: 45px;
+    height: 40px;
+    display:flex;
+    border: 2px solid black; /*Este borde solo es para guiarme */
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(62, 62, 149);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.reset, .equal{
+    grid-column: span 2;
+    width: 105px;
+}
+
+.reset{
+    font-size: 13px;
+    background-color: rgb(62, 62, 149);
+    color: white;
+}
+
+.equal{
+    color: white;
+    background-color: rgb(190, 27, 27);
+    
+
 }
