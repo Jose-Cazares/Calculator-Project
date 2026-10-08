@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.calculator{
+    display: flex;
+    justify-content: center;
+    border: 2px solid green; /*Este borde solo es para guiarme */
+    padding-top: 10px;
+}
+
+.calc-base{
+    height: 60vh;
+    width: 35vw;
+    dispaly: flex;
+    border: 2px solid red; /*Este borde solo es para guiarme */
+    background-color: rgb(21, 31, 109);
+}
+
+.num-btn{
+    width: 50px;
+    height: 40px;
+    display:flex;
+    border: 2px solid black; /*Este borde solo es para guiarme */
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.line{
+    height: 67px;
+    border: 2px solid green;  /*Este borde solo es para guiarme */
+    
+}
