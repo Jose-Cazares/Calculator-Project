@@ -6,6 +6,10 @@
 h1{
     text-align: center;
     padding-top: 10px;
+    color: white;
+}
+body{
+    background-color: rgb(42, 42, 85);
 }
 
 .calculator{
@@ -13,55 +17,54 @@ h1{
     justify-content: center;
     border: 2px solid green; /*Este borde solo es para guiarme */
     padding-top: 10px;
+    height: 80vh;
+    align-content: flex-end;
+    flex-wrap: wrap;
+
 }
 
 .calc-base{
-    height: 50vh;
-    width: 22vw;
+    height: 53vh;
+    width: 23vw;
     display: grid;
     /* border: 2px solid red; Este borde solo es para guiarme */
-    background-color: rgb(48, 55, 104);
-    grid-template-rows: 50px 50px 50px 50px;
-    grid-template-columns: 50px 50px 50px 50px;
-    gap: 5px;
+    background-color: rgba(26, 31, 68, 0.92);
+    grid-template-rows: repeat(5, 65px);
+    grid-template-columns: repeat(4, 65px);
+    gap: 15px;
     justify-content: center;
     align-content: center;
     border-radius: 10px;
 }
 
 .btn-calc{
-    width: 45px;
-    height: 40px;
     display:flex;
-    border: 2px solid black; /*Este borde solo es para guiarme */
+    /* border: 2px solid black; Este borde solo es para guiarme */
     align-items: center;
     justify-content: center;
     background-color: white;
     color: rgb(34, 28, 81);
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .btn-calc.DEL{
-    width: 45px;
-    height: 40px;
     display:flex;
     border: 2px solid black; /*Este borde solo es para guiarme */
     align-items: center;
     justify-content: center;
     background-color: rgb(62, 62, 149);
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .reset, .equal{
     grid-column: span 2;
-    width: 105px;
 }
 
 .reset{
-    font-size: 13px;
+    font-size: 15px;
     background-color: rgb(62, 62, 149);
     color: white;
 }
@@ -69,6 +72,9 @@ h1{
 .equal{
     color: white;
     background-color: rgb(190, 27, 27);
-    
+}
 
+footer{
+    color: white;
+    text-align: center;
 }
