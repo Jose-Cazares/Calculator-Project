@@ -19,6 +19,9 @@ container.addEventListener('click', (event) => {
             display.textContent = newOperation;
         }
     }
+    else if(event.target.matches(".reset")){
+        display.textContent = '0';
+    }
 
 
 });
