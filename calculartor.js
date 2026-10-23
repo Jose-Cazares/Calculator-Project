@@ -22,6 +22,52 @@ container.addEventListener('click', (event) => {
     else if(event.target.matches(".reset")){
         display.textContent = '0';
     }
+    else if(event.target.matches(".equal")){
+        const tokens = display.textContent.match(/\d+\.?\d*|[+\-*/]/g); // Gives an array with all the tokens of the operation to resolve.
+
+        for (let token = 0; token < tokens.length; token++){
+            if (tokens[0] === '/' || tokens[0] === '*' || tokens[0] === '+' || tokens[0] === '-'){
+                display.textContent = 'Syntax Error!!';
+            }
+            else if (tokens[token] === '/'){
+                try{
+                    let num1 = parseFloat(tokens[token - 1]);
+                    let num2 = parseFloat(tokens[token + 1]);
+                    tokens[token - 1] = num1 / num2;
+                    tokens.splice(token, 2);
+                    token--;
+                }catch(error){
+                    display.textContent = 'Syntax Error!!'
+                }
+            }
+            else if (tokens[token] === '*'){
+                try{
+                    console.log(tokens)
+                    let num1 = parseFloat(tokens[token - 1]);
+                    let num2 = parseFloat(tokens[token + 1]);
+                    console.log(num1);
+                    tokens[token - 1] = num1 * num2;
+                    tokens.splice(token, 2);
+                    token--;
+                }catch(error){
+                    display.textContent = 'Syntax Error!!'
+                }
+            }
+            else if (tokens[token] === '+'){
+                try{
+                    let num1 = parseFloat(tokens[token - 1]);
+                    let num2 = parseFloat(tokens[token + 1]);
+                    tokens[token - 1] = num1 + num2;
+                    tokens.splice(token, 2);
+                    token--;
+                }catch(error){
+                    display.textContent = 'Syntax Error!!';
+                }
+            }
+        }
+        console.log(tokens);
+        display.textContent = String(tokens[0]);
+    }
 
 
 });
