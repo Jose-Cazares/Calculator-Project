@@ -1,19 +1,30 @@
 let container = document.querySelector(".calc-base");
 let display = document.querySelector(".res");
+let click_0_before = false;
 
 // Allows to recive de click of the buttons.
 container.addEventListener('click', (event) => {
     if (event.target.matches("#num")) {
-        if (display.textContent === '0') { // If the content of display 0, add the content of the button that has been clicked. 
+        if (display.textContent === '0' && event.target.textContent === '0') { // If the content of display 0, add the content of the button that has been clicked. 
             display.textContent = event.target.textContent;
-        } else {
+            click_0_before = true;
+        } 
+        else if(click_0_before){
             display.textContent += event.target.textContent;
         }
+        else if(click_0_before === false && display.textContent === '0'){
+            display.textContent = event.target.textContent;
+        }
+        else {
+            display.textContent += event.target.textContent;
+        }
+
     }
     else if (event.target.matches(".DEL")) {
         let operation = display.textContent;
         if (operation.length === 1) {
             display.textContent = '0'; // Default value of display.
+            click_0_before = false;
         } else {
             let newOperation = operation.slice(0, -1); // Returns the new String deleting the last character. 
             display.textContent = newOperation;
@@ -21,6 +32,7 @@ container.addEventListener('click', (event) => {
     }
     else if (event.target.matches(".reset")) {
         display.textContent = '0';
+        click_0_before = false;
     }
     else if (event.target.matches(".equal")) {
         const tokens = display.textContent.match(/\d+\.?\d*|[+\-*/]/g); // Gives an array with all the tokens of the operation to resolve.
