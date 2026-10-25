@@ -18,7 +18,6 @@ container.addEventListener('click', (event) => {
         else {
             display.textContent += event.target.textContent;
         }
-
     }
     else if (event.target.matches(".DEL")) {
         let operation = display.textContent;
@@ -35,7 +34,7 @@ container.addEventListener('click', (event) => {
         click_0_before = false;
     }
     else if (event.target.matches(".equal")) {
-        const tokens = display.textContent.match(/\d+\.?\d*|[+\-*/]/g); // Gives an array with all the tokens of the operation to resolve.
+        const tokens = display.textContent.match(/(?<![\d.])-?\d+\.?\d*|[+\-*/]/g); // Gives an array with all the tokens of the operation to resolve.
         console.log(tokens);
 
         if (tokens[0] === '/' || tokens[0] === '*' || tokens[0] === '+' || tokens[0] === '-') {
